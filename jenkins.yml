@@ -26,4 +26,7 @@ jobs:
                   excludes('release/*')
               }
           }
+          triggers {
+              cron('*/1 * * * *')
+          }          
       }
