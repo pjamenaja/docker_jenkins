@@ -27,6 +27,6 @@ jobs:
               }
           }
           triggers {
-              cron('*/1 * * * *')
-          }          
+              periodic(1)
+          }       
       }
