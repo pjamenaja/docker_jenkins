@@ -15,17 +15,15 @@ tool:
                 id: "3.5.4"
 jobs:
   - script: >
-      pipelineJob('pipeline') {
-          definition {
-              cpsScm {
-                  scriptPath 'Jenkinsfile'
-                  scm {
-                    git {
-                        remote { url 'https://github.com/mkrzyzanowski/blog-001.git' }
-                        branch '*/docker-for-mac'
-                        extensions {}
-                    }
-                  }
+      multibranchPipelineJob('XXXXXX-Dev') {
+          displayName('Display name')
+          branchSources {
+              git {
+                  id('docker-jenkins')
+                  remote('https://github.com/pjamenaja/docker_jenkins.git')
+                  credentialsId('')
+                  includes('master dev/* trunk')
+                  excludes('release/*')
               }
           }
       }
