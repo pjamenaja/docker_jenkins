@@ -1,5 +1,5 @@
 substitutions:
-  _DOCKER_VERSION: "1.4"
+  _DOCKER_VERSION: "1.5"
   _JENKINS_VERSION: "2.200"
 
 steps:

@@ -1,0 +1,32 @@
+jenkins:
+  systemMessage: "I did this using Jenkins Configuration as Code Plugin \n\n"
+tool:
+  git:
+    installations:
+    - home: "git"
+      name: "Default"
+  maven:
+    installations:
+    - name: "Maven 3"
+      properties:
+      - installSource:
+          installers:
+            - maven:
+                id: "3.5.4"
+jobs:
+  - script: >
+      multibranchPipelineJob('XXXXXX-Dev') {
+          displayName('Display name')
+          branchSources {
+              git {
+                  id('docker-jenkins')
+                  remote('https://github.com/pjamenaja/docker_jenkins.git')
+                  credentialsId('')
+                  includes('master dev/* trunk')
+                  excludes('release/*')
+              }
+          }
+          triggers {
+              periodic(1)
+          }       
+      }
