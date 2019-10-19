@@ -1,8 +1,8 @@
-workflow-aggregator:2.6
-blueocean:1.19.0
-pipeline-maven:3.8.2
-configuration-as-code-support:1.18
-job-dsl:1.76
-workflow-job:2.32
-credentials-binding:1.18
-git:3.10.0
+workflow-aggregator:latest
+blueocean:latest
+pipeline-maven:latest
+configuration-as-code-support:latest
+job-dsl:latest
+workflow-job:latest
+credentials-binding:latest
+git:latest
