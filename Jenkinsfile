@@ -3,6 +3,8 @@ def environment  = env.ENVIRONMENT
 def version      = env.VERSION
 def jobs         = [:]
 
+error("ERROR: APPLICATIONS must be a comma-delimited list of applications to build")
+
 if (applications.size() < 1) {
     error("ERROR: APPLICATIONS must be a comma-delimited list of applications to build")
 }
