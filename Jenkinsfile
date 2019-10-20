@@ -6,7 +6,7 @@ def jobs         = [:]
 if (applications.size() < 1) {
     error("ERROR: APPLICATIONS must be a comma-delimited list of applications to build")
 }
-
+ 
 for (int i = 0; i < applications.size(); i++) {
     def app = applications[i]
     jobs["jobs-${app}"] = {
